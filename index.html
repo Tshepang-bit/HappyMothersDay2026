@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Mother's Day, Mom 💐</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blush:    #f5e6e0;
+      --rose:     #c97d7d;
+      --deep:     #7a3b3b;
+      --gold:     #c9a96e;
+      --cream:    #fdf7f2;
+      --text:     #3d2020;
+      --muted:    #9c7070;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      position: relative;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, #f9ddd3 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, #f0d5c8 0%, transparent 60%),
+        var(--cream);
+      overflow: hidden;
+    }
+
+    /* decorative petals */
+    .hero::before, .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.18;
+    }
+    .hero::before {
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, var(--rose), transparent);
+      top: -140px; right: -140px;
+    }
+    .hero::after {
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, var(--gold), transparent);
+      bottom: -100px; left: -80px;
+    }
+
+    .hero-flowers {
+      font-size: 3.5rem;
+      margin-bottom: 1.5rem;
+      animation: floatFlowers 4s ease-in-out infinite;
+      letter-spacing: 0.1em;
+    }
+    @keyframes floatFlowers {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--deep);
+      letter-spacing: -0.01em;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--rose);
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 1.2rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .hero-divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+      margin: 2rem auto;
+    }
+
+    .hero-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--deep);
+      max-width: 560px;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      animation: fadeInUp 1.5s ease 1s both;
+    }
+    .scroll-hint span { display: block; width: 1px; height: 40px; background: linear-gradient(to bottom, var(--rose), transparent); }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      color: var(--deep);
+      margin-bottom: 3rem;
+    }
+    .section-title em { font-style: italic; color: var(--rose); }
+
+    /* ── MESSAGE ── */
+    .message-block {
+      background: white;
+      border-left: 3px solid var(--rose);
+      border-radius: 0 16px 16px 0;
+      padding: 2.5rem 3rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+      font-style: italic;
+      line-height: 1.9;
+      color: var(--deep);
+      box-shadow: 0 4px 30px rgba(201,125,125,0.08);
+      max-width: 700px;
+    }
+    /* ── HOW TO EDIT NOTE ── */
+    .edit-note {
+      background: #fff8f5;
+      border: 1px dashed var(--gold);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      font-size: 0.83rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      line-height: 1.6;
+    }
+    .edit-note strong { color: var(--rose); }
+
+    /* ── PHOTO GALLERY ── */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .photo-card {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--blush);
+      aspect-ratio: 1 / 1;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(122,59,59,0.10);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .photo-card:hover {
+      transform: translateY(-4px) scale(1.01);
+      box-shadow: 0 12px 40px rgba(122,59,59,0.18);
+    }
+    .photo-card img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s;
+    }
+    .photo-card .caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(60,20,20,0.75), transparent);
+      color: white;
+      padding: 1rem 1rem 0.8rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    .photo-card:hover .caption { opacity: 1; transform: translateY(0); }
+
+    /* Add-photo placeholder */
+    .photo-placeholder {
+      border: 2px dashed var(--rose);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--rose);
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: transparent;
+      aspect-ratio: 1/1;
+      border-radius: 16px;
+      opacity: 0.5;
+    }
+    .photo-placeholder svg { width: 36px; height: 36px; }
+
+    /* ── VIDEO GALLERY ── */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .video-card {
+      border-radius: 16px;
+      overflow: hidden;
+      background: #1a0a0a;
+      box-shadow: 0 4px 24px rgba(122,59,59,0.15);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(122,59,59,0.22);
+    }
+    .video-card video, .video-card iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      display: block;
+      border: none;
+    }
+    .video-caption {
+      padding: 0.8rem 1rem;
+      color: #f0d0d0;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── LIGHTBOX ── */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(20,5,5,0.92);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem; right: 1.5rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      line-height: 1;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    .lightbox-close:hover { opacity: 1; }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 3rem 1rem 5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+    }
+    footer .big-heart {
+      font-size: 2.5rem;
+      display: block;
+      margin-bottom: 0.8rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.15); }
+    }
+
+    /* ── FADE-IN ANIMATION ── */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-flowers">🌸 🌷 🌺</div>
+  <h1>Happy<em>Mother's Day</em></h1>
+  <p class="hero-sub">A tribute to the most wonderful woman I know</p>
+  <div class="hero-divider"></div>
+  <p class="hero-quote">"A mother's love is the fuel that enables a normal human being to do the impossible."</p>
+  <div class="scroll-hint">Scroll <span></span></div>
+</div>
+
+<!-- MESSAGE -->
+<section class="fade-in">
+  <p class="section-label">From the heart</p>
+  <h2 class="section-title">Dear <em>Mom</em></h2>
+
+  <div class="edit-note">
+    ✏️ <strong>To personalise:</strong> Replace the text below with your own message to your mom. Open <code>index.html</code> in any text editor and find the <code>&lt;div class="message-block"&gt;</code> section.
+  </div>
+
+  <div class="message-block">
+    There are no words grand enough to describe what you mean to me. You have been my safe place, my greatest cheerleader, and my very best example of what it looks like to love without limits. Every memory I treasure has your fingerprints on it. Thank you for everything you are — and everything you've helped me become. I love you more than you'll ever know.
+    <br><br>
+    — Your child 💕
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="fade-in">
+  <p class="section-label">Our memories</p>
+  <h2 class="section-title">Photo <em>Gallery</em></h2>
+
+  <div class="edit-note">
+    📷 <strong>To add photos:</strong> Save your images into the same folder as <code>index.html</code>, then replace <code>your-photo-1.jpg</code> etc. with your actual filenames. Change the captions too!
+  </div>
+
+  <div class="gallery-grid" id="photoGrid">
+
+    <!-- 
+      HOW TO ADD A PHOTO:
+      Copy one <div class="photo-card"> block below, paste it, and change:
+        src="your-photo-1.jpg"   →  your image filename
+        "Caption here"           →  your caption text
+    -->
+
+    <div class="photo-card" onclick="openLightbox(this)">
+      <img src="your-photo-1.jpg" alt="Photo 1" onerror="this.parentElement.style.background='#f5e6e0';this.style.display='none'"/>
+      <div class="caption">Caption here ✨</div>
+    </div>
+
+    <div class="photo-card" onclick="openLightbox(this)">
+      <img src="your-photo-2.jpg" alt="Photo 2" onerror="this.parentElement.style.background='#f0d8d0';this.style.display='none'"/>
+      <div class="caption">Caption here 🌸</div>
+    </div>
+
+    <div class="photo-card" onclick="openLightbox(this)">
+      <img src="your-photo-3.jpg" alt="Photo 3" onerror="this.parentElement.style.background='#ead5cc';this.style.display='none'"/>
+      <div class="caption">Caption here 💕</div>
+    </div>
+
+    <!-- Placeholder to remind user to add more -->
+    <div class="photo-placeholder">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      Add your photo here
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO GALLERY -->
+<section class="fade-in">
+  <p class="section-label">Moving moments</p>
+  <h2 class="section-title">Video <em>Memories</em></h2>
+
+  <div class="edit-note">
+    🎥 <strong>To add a local video:</strong> Save your <code>.mp4</code> file in the same folder and replace <code>your-video-1.mp4</code>. <br/>
+    🔗 <strong>To embed YouTube:</strong> Replace the <code>&lt;video&gt;</code> tag with <code>&lt;iframe src="https://www.youtube.com/embed/VIDEO_ID"&gt;&lt;/iframe&gt;</code>.
+  </div>
+
+  <div class="video-grid">
+
+    <!-- LOCAL VIDEO EXAMPLE -->
+    <div class="video-card">
+      <video controls poster="">
+        <source src="your-video-1.mp4" type="video/mp4"/>
+        Your browser does not support video.
+      </video>
+      <div class="video-caption">Video caption here 🎬</div>
+    </div>
+
+    <!-- YOUTUBE EMBED EXAMPLE (uncomment and paste your VIDEO_ID) -->
+    <!--
+    <div class="video-card">
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" allowfullscreen></iframe>
+      <div class="video-caption">A favourite song for Mom 🎵</div>
+    </div>
+    -->
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="big-heart">💗</span>
+  Made with all the love in the world &nbsp;·&nbsp; Happy Mother's Day
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lightboxImg" src="" alt=""/>
+</div>
+
+<script>
+  // Lightbox
+  function openLightbox(card) {
+    const img = card.querySelector('img');
+    if (!img || img.style.display === 'none') return;
+    document.getElementById('lightboxImg').src = img.src;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+
+  // Fade-in on scroll
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
